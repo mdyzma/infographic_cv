@@ -4,8 +4,10 @@
 
 \usepackage{verdana}
 \usepackage{xcolor}
+%\usepackage{url}
 \usepackage{tikz}
 \usepackage{fontspec}
+%\usepackage{hyperref}
 \usepackage{fontawesome}
 
 \newcommand\myfont[2]{\fontsize{#1}{#2}\selectfont}
@@ -21,15 +23,17 @@
       % Name & sentence
       \node[xshift=2.5cm,yshift=3cm,text=white,font=\myfont{50}{48}] {\textsc{Michał Dyzma}};
       \node[xshift=2.5cm,yshift=1.7cm,text=white,font=\myfont{18}{48}] {True programmer has blood type 'C'};
-      %\node[xshift=.1cm,yshift=1.8cm,text=white,font=\myfont{20}{48}] {www.michaldyzma.pl};
 
       % Social media links
-      \node[yshift=12cm,xshift=8.5cm] at (current page.center)
-        [text width=8cm,text=white,font=\myfont{25}{60},above]{\faTwitter \hspace{.6cm}   \faFacebook \hspace{.6cm} \faLinkedinSign  \hspace{.6cm} \faGithub};
+      \node[yshift=12.3cm,xshift=8.5cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\faFacebook \hspace{.6cm} \faLinkedinSign  \hspace{.6cm} \faGithub}
+      \node[xshift=-4cm,yshift=9.5cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faHome \hspace{.2cm} Gen. Grochowskiego 10/28};
+      \node[xshift=-4cm,yshift=9.1cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\hspace{.7cm} 05-500 Piaseczno};
+
+      \node[xshift=5.5cm,yshift=10cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faPhone \hspace{.2cm} +48 470 74 11 75};
+      \node[xshift=5.5cm,yshift=9.3cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faGlobe \hspace{.2cm} www.michaldyzma.pl};
+      \node[xshift=5.5cm,yshift=8.6cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faEnvelope \hspace{.2cm} mdyzma@gmail.com};
 
       % Footer black stripe
        \draw [draw=black,fill=black](current page.south west) rectangle (\paperwidth,-24);
-       \node[xshift=-0.3cm,yshift=-21.7cm,text=white,font
-       =\myfont{17}{48}] {\textsc{Gen. Grochowskiego} 10/28, 05 -- 500 Piaseczno};       \node[xshift=-0.3cm,yshift=-22.3cm,text=white,font=\myfont{17}{48}] {\faMobilePhone \hspace{.1cm} +48570741175};
     \end{tikzpicture}
 \end{document}
