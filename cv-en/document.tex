@@ -1,12 +1,18 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper,hidelinks]{article}
 
 \usepackage[english]{babel}
 
 \usepackage{verdana}
+\usepackage{dashrule}
+\usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{fontspec}
 \usepackage{fontawesome}
+
+%\usepackage{geometry}
+%\geometry{hscale={0,9}}
+%\geometry{vscale={0,90}}
 
 \newcommand\myfont[2]{\fontsize{#1}{#2}\selectfont}
 
@@ -15,26 +21,36 @@
 
 
 \begin{tikzpicture}[remember picture,overlay,line width=0mm]
-      % draws the header black stripe
-      \draw [draw=black,fill=black](current page.north west) rectangle (\paperwidth,1);
+    
+    % draws the header black stripe
+    \draw [fill=black!80](current page.north west) rectangle (\paperwidth,1);
         
-      % Name & sentence
-      \node[xshift=2.5cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
-      \node[xshift=2.5cm,yshift=1.7cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+    % Name & sentence
+    \node[xshift=2.5cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
+	\node[xshift=2.5cm,yshift=1.7cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
 
-      % Social media links
-      \node[yshift=12cm,xshift=8.5cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\faTwitter \hspace{.6cm}   \faFacebook \hspace{.6cm} \faLinkedinSign  \hspace{.6cm} \faGithub};
+	% Social media links
+	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma}{\faGithub}};
       
-	  % Address
-	  \node[xshift=-4cm,yshift=9.5cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faHome \hspace{.2cm} Gen. Grochowskiego 10/28};
-	  \node[xshift=-4cm,yshift=9.1cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\hspace{.7cm} 05-500 Piaseczno};
-      \node[xshift=5.5cm,yshift=10cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faPhone \hspace{.2cm} +48 470 74 11 75};
-      \node[xshift=5.5cm,yshift=9.3cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faGlobe \hspace{.2cm} www.michaldyzma.pl};
-      \node[xshift=5.5cm,yshift=8.6cm] at (current page.center)[text width=8cm,text=black,align=left,font=\myfont{15}{60},above]{\faEnvelope \hspace{.2cm} mdyzma@gmail.com};
+	% Address
+	\node[xshift=-4cm,yshift=9.5cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faHome \hspace{.2cm} Gen. Grochowskiego 10/28};
+	\node[xshift=-4cm,yshift=9.1cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\hspace{.7cm} 05-500 Piaseczno};
+    \node[xshift=5.5cm,yshift=10cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faPhone \hspace{.2cm} +48 470 74 11 75};
+    \node[xshift=5.5cm,yshift=9.3cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faGlobe \hspace{.2cm} \href{http://michaldyzma.pl}{www.michaldyzma.pl}};
+    \node[xshift=5.5cm,yshift=8.6cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faEnvelope \hspace{.2cm} \href{mailto:mdyzma@gmail.com}{mdyzma@gmail.com}};
 
-      % Footer black stripe
-       \draw [draw=black,fill=black](current page.south west) rectangle (\paperwidth,-24);
-       \node[xshift=-0.3cm,yshift=-21.7cm,text=white,font
-       =\myfont{17}{48}] {\textsc{Gen. Grochowskiego} 10/28, 05 -- 500 Piaseczno};       \node[xshift=-0.3cm,yshift=-22.3cm,text=white,font=\myfont{17}{48}] {\faMobilePhone \hspace{.1cm} +48570741175};
+	%\node[xshift=2.5cm,yshift=-4cm,text=black!80,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+
+    % Footer black stripe
+    \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
     \end{tikzpicture}
+    
+    \newpage
+    \thispagestyle{empty}
+    
+   
+    \begin{tikzpicture}[remember picture,overlay,line width=0mm]
+    \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
+    \end{tikzpicture}
+    
 \end{document}
