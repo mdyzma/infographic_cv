@@ -6,14 +6,15 @@
 
 \usepackage[english]{babel}
 
-\usepackage{verdana}
 \usepackage{lipsum}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{fontspec}
-\usepackage{verdana}
+\usepackage{opensans}
 \usepackage{fontawesome}
+
+\setmainfont[]{opensans}
 
 \newcommand\myfont[2]{\fontsize{#1}{#2}\selectfont}
 
@@ -23,15 +24,15 @@
 
 \begin{tikzpicture}[remember picture,overlay,line width=0mm]
 
-    % draws side bar's vertical stripe
-    \draw [fill=gray!10,draw=gray!10](current page.north west) rectangle (.05\paperwidth,-24);
+	% draws side bar's vertical stripe
+    \draw [fill=gray!10,draw=gray!10](current page.north west) rectangle (.06\paperwidth,-24);
     
     % draws the header black stripe
     \draw [fill=black!80](current page.north west) rectangle (\paperwidth,1);
     
     % Header
-    \node[xshift=2cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
-	\node[xshift=2cm,yshift=1.7cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+    \node[xshift=2.5cm,yshift=3cm,text=white,font=\myfont{60}{48}]{\textsc{Michał Dyzma}};
+	\node[xshift=2.5cm,yshift=1.5cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
 
       
 	% Sidebar
@@ -53,7 +54,7 @@
 	\node[xshift=3cm,yshift=8.5cm] at (current page.center)[text width=14cm,text=black!80,align=justify,font=\myfont{12}{12},above]{Dear Sir, Madame,};
 	
 	% Motivation letter - core
-	\node[xshift=3cm,yshift=-10cm] at (current page.center)[text width=14cm,text=black!80,align=justify,font=\myfont{12}{12},above]{\lipsum[5-9]};
+	\node[xshift=3cm,yshift=-10cm] at (current page.center)[text width=14cm,text=black!80,align=justify,font=\myfont{12}{12},above]{\lipsum[7-10]};
 	
 	% Motivation letter - signature
 	\node[xshift=3cm,yshift=-11cm] at (current page.center)[text width=14cm,text=black!80,align=justify,font=\myfont{12}{12},above]{Sincerely yours,};
