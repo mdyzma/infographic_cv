@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 
 \usepackage{verdana}
+\usepackage{lipsum}
 \usepackage{dashrule}
 \usepackage{hyperref}
 \usepackage{xcolor}
@@ -26,8 +27,8 @@
     \draw [fill=black!80](current page.north west) rectangle (\paperwidth,1);
         
     % Name & sentence
-    \node[xshift=2.5cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
-	\node[xshift=2.5cm,yshift=1.7cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+    \node[xshift=2cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
+	\node[xshift=2cm,yshift=1.7cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
 
 	% Social media links
 	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma}{\faGithub}};
@@ -48,9 +49,10 @@
     \newpage
     \thispagestyle{empty}
     
-   
     \begin{tikzpicture}[remember picture,overlay,line width=0mm]
     \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
     \end{tikzpicture}
+    
+        \lipsum
     
 \end{document}
