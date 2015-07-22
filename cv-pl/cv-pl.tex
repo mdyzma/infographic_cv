@@ -1,20 +1,22 @@
+% Projekt: Nowoczesne CV. Część zestawu infographic-cv.
+% Author : Michal Dyzma
+% Date   : 21.07.2015
+
 \documentclass[11pt,a4paper,hidelinks]{article}
 
-\usepackage[english]{babel}
+\usepackage[english,polish]{babel}
 
-\usepackage{verdana}
 \usepackage{lipsum}
 \usepackage{dashrule}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{tikz}
+
 \usepackage{fontspec}
+\usepackage{opensans}
 \usepackage{fontawesome}
 
-%\usepackage{geometry}
-%\geometry{hscale={0,9}}
-%\geometry{vscale={0,90}}
-
+\setmainfont[]{opensans}
 \newcommand\myfont[2]{\fontsize{#1}{#2}\selectfont}
 
 \begin{document}
@@ -23,26 +25,39 @@
 
 \begin{tikzpicture}[remember picture,overlay,line width=0mm]
     
-    % draws the header black stripe
+    % Czarny pasek nagłówka
     \draw [fill=black!80](current page.north west) rectangle (\paperwidth,1);
         
-    % Name & sentence
+    % Imie & sentencja
     \node[xshift=2cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
-	\node[xshift=2cm,yshift=1.7cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+	\node[xshift=2cm,yshift=1.6cm,text=white,font=\myfont{17}{48}]{Prawdziwy programista ma grupę krwi 'C'};
 
-	% Social media links
-	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma}{\faGithub}};
+	% Portale społecznościowe - linki
+	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma/infographic-cv}{\faGithub}};
       
-	% Address
+	% Adres
 	\node[xshift=-4cm,yshift=9.5cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faHome \hspace{.2cm} Gen. Grochowskiego 10/28};
 	\node[xshift=-4cm,yshift=9.1cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\hspace{.7cm} 05-500 Piaseczno};
     \node[xshift=5.5cm,yshift=10cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faPhone \hspace{.2cm} +48 470 74 11 75};
     \node[xshift=5.5cm,yshift=9.3cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faGlobe \hspace{.2cm} \href{http://michaldyzma.pl}{www.michaldyzma.pl}};
     \node[xshift=5.5cm,yshift=8.6cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60},above]{\faEnvelope \hspace{.2cm} \href{mailto:mdyzma@gmail.com}{mdyzma@gmail.com}};
+    
+    % Cienka kropkowana linia
+    \draw [dotted,fill=black!80] (-3,-1.3) -- (14,-1.3);
 
-	%\node[xshift=2.5cm,yshift=-4cm,text=black!80,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+	% Timeline
+	\node [xshift=-6.1cm,yshift=7.5cm]at (current page.center)[text width=5.5cm, font=\myfont{30}{32},text=black!80]{\textsc{\textbf{Edukacja}}};
+	
+	\node [xshift=5cm,yshift=7.5cm]at (current page.center)[text width=9cm, font=\myfont{30}{32},text=black!80]{\textsc{\textbf{Doświadczenie}}};
+	
+		
+		% separatrix
+		\draw[-][draw=black!90, thick] (4,-3) -- (4,-10);
+		
+		% Logo
+		\node [xshift=1cm,yshift=7.3cm]at (current page.center)[text width=7.5cm, font=\myfont{30}{32},text=black!80]{\includegraphics[width=2cm]{logo.jpg}};
 
-    % Footer black stripe
+    % Czarny pasek stopki
     \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
     \end{tikzpicture}
     
@@ -53,6 +68,5 @@
     \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
     \end{tikzpicture}
     
-        \lipsum
     
 \end{document}

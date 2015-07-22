@@ -1,0 +1,85 @@
+% Project: Modern motiv. letter part of infograhic-cv bundle
+% Author : Michal Dyzma
+% Date   : 21.07.2015
+
+\documentclass[11pt,a4paper,hidelinks]{article}
+
+\usepackage[english]{babel}
+
+\usepackage{lipsum}
+\usepackage{dashrule}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{fontspec}
+\usepackage{opensans}
+\usepackage{fontawesome}
+
+\setmainfont[]{opensans}
+\newcommand\myfont[2]{\fontsize{#1}{#2}\selectfont}
+
+\begin{document}
+\thispagestyle{empty}
+
+
+\begin{tikzpicture}[remember picture,overlay,line width=0mm]
+    
+    % draws the header black stripe
+    \draw [fill=black!80](current page.north west) rectangle (\paperwidth,1);
+        
+    % Name & sentence
+    \node[xshift=2cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
+	\node[xshift=2cm,yshift=1.6cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
+
+	% Social media links
+	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma}{\faGithub}};
+      
+	% Address
+	\node[xshift=-4cm,yshift=10cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60}]{\faHome \hspace{.2cm} Gen. Grochowskiego 10/28};
+	\node[xshift=-4cm,yshift=9.5cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60}]{\hspace{.7cm} 05-500 Piaseczno};
+    \node[xshift=5.5cm,yshift=10.5cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60}]{\faPhone \hspace{.2cm} +48 470 74 11 75};
+    \node[xshift=5.5cm,yshift=9.8cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60}]{\faGlobe \hspace{.2cm} \href{http://michaldyzma.pl}{www.michaldyzma.pl}};
+    \node[xshift=5.5cm,yshift=9.1cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60}]{\faEnvelope \hspace{.2cm} \href{mailto:mdyzma@gmail.com}{mdyzma@gmail.com}};
+
+	% thin dotted line
+	\draw [dotted,fill=black!80] (-3,-1.3) -- (14,-1.3);
+
+	% timeline
+	\node [xshift=-6.1cm,yshift=7.5cm]at (current page.center)[text width=5.5cm, font=\myfont{30}{32},text=black!80]{\textsc{\textbf{Education}}};
+	
+	\node [xshift=6.2cm,yshift=7.5cm]at (current page.center)[text width=7.5cm, font=\myfont{30}{32},text=black!80]{\textsc{\textbf{Experience}}};
+	
+		% separatrix
+		\draw[-][draw=black!80, very thick] (5,-3) -- (5,-10);
+	
+		% Logo
+		\node [xshift=2cm,yshift=7.3cm]at (current page.center)[text width=7.5cm, font=\myfont{30}{32},text=black!80]{\includegraphics[width=2cm]{logo.jpg}};
+		
+		\tikzstyle{event}=[shape=rectangle,draw=red]
+		\tikzstyle{date}=[shape=rectangle,draw=blue,minimal size=2cm]
+		%Events Education
+		%\path \node[date] (one)  [above of=two]{};
+%			  \node[date] (two)  [above of=three]{};
+%			  \node[date] (three)[current page.center]{};
+%			  \node[date] (four) [below of=three]{};
+%			  \node[date] (five) [below of=four]{};
+
+	
+	% Skills
+	\node [xshift=4.5cm]at (current page.west)[text=black!80,font=\myfont{25}{15},draw=red]{\textbf{Programming Skills}};
+	
+    % Footer black stripe
+    \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
+    \end{tikzpicture}
+    
+    \newpage
+    \thispagestyle{empty}
+    
+    \begin{tikzpicture}[remember picture,overlay,line width=0mm]
+    \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
+    \end{tikzpicture}
+    
+    
+\end{document}
