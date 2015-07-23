@@ -11,7 +11,9 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{wasysym}
 \usepackage{tikz}
+\usepackage{tabularx,colortbl}
 
 \usepackage{fontspec}
 \usepackage{opensans}
@@ -19,6 +21,7 @@
 
 \setmainfont[]{opensans}
 \newcommand\myfont[2]{\fontsize{#1}{#2}\selectfont}
+\usetikzlibrary[arrows,snakes,backgrounds]
 
 \begin{document}
 \thispagestyle{empty}
@@ -27,14 +30,14 @@
 \begin{tikzpicture}[remember picture,overlay,line width=0mm]
     
     % draws the header black stripe
-    \draw [fill=black!80](current page.north west) rectangle (\paperwidth,1);
+    \path [fill=black!80](current page.north west) rectangle (\paperwidth,1);
         
     % Name & sentence
     \node[xshift=2cm,yshift=3cm,text=white,font=\myfont{50}{48}]{\textsc{Michał Dyzma}};
 	\node[xshift=2cm,yshift=1.6cm,text=white,font=\myfont{18}{48}]{True programmer has blood type 'C'};
 
 	% Social media links
-	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma}{\faGithub}};
+	\node[yshift=12.25cm,xshift=8cm] at (current page.center)[text width=8cm,text=white,font=\myfont{25}{60},above]{\href{https://twitter.com/MichalDyzma}{\faTwitter} \hspace{.5cm} \href{https://www.facebook.com/profile.php?id=100005002682826}{\faFacebook} \hspace{.5cm} \href{https://www.linkedin.com/profile/view?id=316953832&trk=nav_responsive_tab_profile}{\faLinkedinSign} \hspace{.5cm} \href{https://github.com/mdyzma/infographic-cv}{\faGithub}};
       
 	% Address
 	\node[xshift=-4cm,yshift=10cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{60}]{\faHome \hspace{.2cm} Gen. Grochowskiego 10/28};
@@ -46,33 +49,209 @@
 	% thin dotted line
 	\draw [dotted,fill=black!80] (-3,-1.3) -- (14,-1.3);
 
-	% timeline
-	\node [xshift=-6.1cm,yshift=7.5cm]at (current page.center)[text width=5.5cm, font=\myfont{30}{32},text=black!80]{\textsc{\textbf{Education}}};
+	% Experience
+	\path [rotate=90,fill=cyan!80] (-1.6,3.5) rectangle (-10,3.6);
+	\node [xshift=-9.5cm,yshift=8.5cm,rotate=90]at (current page.center)[text width=8.5cm, font=\myfont{20}{32},text=black!80]{\textsc{\textbf{Experience}}};
 	
-	\node [xshift=6.2cm,yshift=7.5cm]at (current page.center)[text width=7.5cm, font=\myfont{30}{32},text=black!80]{\textsc{\textbf{Experience}}};
+	\node[xshift=-6cm,yshift=4.3cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{15}]
+	{
+		\begin{tabularx}{0.95\paperwidth}{>{\raggedleft\scshape}p{4cm}X}
+			\textbf{2014 - } & \textbf{Freelancer}\\
+									  & \textit{software developer (python, C++, web-developer)}\\[0.4cm]
+			\textbf{2014}  & \textbf{International Institute of Molecular and Cell Biology}\\
+									  %& Lab. of Bioinformatics and Protein Engineering\\
+							  		  & \textit{biologist, programmer}\\[0.3cm]
+			\textbf{2009 - 2013}& \textbf{Institute of Fundamental, Technological Research,}\\
+									  & \textbf{Polish Academy of Sciences, Warsaw}\\
+									  %& Department of Mechanics and Physics of Fluids\\
+		        					  %& Laboratory of Modeling in Biology and Medicine\\
+        							  & \textit{Researcher}\\[0.3cm]
+			\textbf{2006 - 2009}  & \textbf{Universit\'{e} Libre de Bruxelles}\\
+        							  & H\^{o}pital Andr\'{e} Vesal\'{e}, Laboratoire de Sommeil\\
+									  & \textit{Early Stage Researcher}\\[0.3cm]
+			\textbf{2004 - 2006}  & \textbf{Noffer Institute of Occupational Medicine in Lodz}\\
+									 %& Department of Toxicology and Carcinogenesi\\
+									  & \textit{Technician}\\
+    \end{tabularx}
+	};
+
+	% thin dotted line
+	\draw [dotted,fill=black!80] (-3,-10.2) -- (14,-10.2);
+
+	% Education
+	\path [rotate=90,fill=green!80] (-10.4,3.5) rectangle (-14.7,3.6);
+	\node [xshift=-9.6cm,yshift=-1.8cm,rotate=90]at (current page.center)[text width=5cm, font=\myfont{20}{32},text=black!80]{\textsc{\textbf{Education}}};
+
+	\node[xshift=-6cm,yshift=-2.6cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{15}{15}]
+	{
+		\begin{tabularx}{0.95\paperwidth}{>{\raggedleft\scshape}p{4cm}X}
+			\textbf{2009 - 2013}& \textbf{Institute of Fundamental, Technological Research}\\
+		        					  & Laboratory of Modeling in Biology and Medicine\\
+        							  & \textit{PhD studies}\\[0.3cm]
+   			\textbf{1998 - 2002} & \textbf{University of Lodz}\\
+									  & \textit{Msc in Neurobiology, Msc in Genetics}\\
+    \end{tabularx}
+	};
+
+	% thin dotted line
+	\draw [dotted,fill=black!80] (-3,-14.9) -- (14,-14.9);
+
+	%  Languages
+	\path [rotate=90,fill=red] (-15.3,3.5) rectangle (-19.5,3.6);
+	\node [xshift=-9.51cm,yshift=-6.8cm,rotate=90]at (current page.center)[text width=5cm, font=\myfont{20}{32},text=black!80]{\textsc{\textbf{Languages}}};
 	
-		% separatrix
-		\draw[-][draw=black!80, very thick] (5,-3) -- (5,-10);
+	\node[xshift=-4cm,yshift=-7.5cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{17}{15}]
+	{
+		\begin{tabularx}{0.95\paperwidth}{>{\raggedright\scshape}p{3cm}X}
+			\textbf{English}& \CIRCLE\CIRCLE\CIRCLE\CIRCLE\CIRCLE\Circle\\[0.4cm]
+			\textbf{German} & \CIRCLE\CIRCLE\CIRCLE\Circle\Circle\Circle\\[0.4cm]
+			\textbf{French} & \CIRCLE\Circle\Circle\Circle\Circle\Circle\\[0.4cm]
+	    \end{tabularx}
+	};
 	
-		% Logo
-		\node [xshift=2cm,yshift=7.3cm]at (current page.center)[text width=7.5cm, font=\myfont{30}{32},text=black!80]{\includegraphics[width=2cm]{logo.jpg}};
+	%Skills
+	\path [rotate=90,fill=red] (-15.3,-6.5) rectangle (-23.5,-6.6);		
+
+	\node [xshift=.5cm,yshift=-8.2cm,rotate=90]at (current page.center)[text width=7.5cm, font=\myfont{20}{32},text=black!80]{\textsc{\textbf{Professional Skills}}};
+	
+	\node[xshift=5.5cm,yshift=-9.6cm] at (current page.center)[text width=8cm,text=black!80,align=left,font=\myfont{18}{18}]
+	{
+		\begin{tabularx}{0.95\paperwidth}{>{\raggedright\scshape}p{3cm}X}
+			\textbf{Python}& \\[.2cm]
+			\textbf{C++} & \\[.2cm]
+			\textbf{HTML} & \\[.2cm]
+			\textbf{CSS} & \\[.2cm]
+			\textbf{PHP} & \\[.2cm]
+			\textbf{\LaTeX} & \\[.2cm]
+			\textbf{Matlab} & \\[.2cm]
+			\textbf{Comsol} & \\[.2cm]
+			\textbf{Linux} & \\[.2cm]
+			\textbf{Windows} & \\[.2cm]
+	    \end{tabularx}
+	};
+	
+	%Skills bars
+
 		
-		\tikzstyle{event}=[shape=rectangle,draw=red]
-		\tikzstyle{date}=[shape=rectangle,draw=blue,minimal size=2cm]
-		%Events Education
-		%\path \node[date] (one)  [above of=two]{};
-%			  \node[date] (two)  [above of=three]{};
-%			  \node[date] (three)[current page.center]{};
-%			  \node[date] (four) [below of=three]{};
-%			  \node[date] (five) [below of=four]{};
+		\path [fill=black!80] (10.5,-15.3) rectangle (12.8,-15.85);
+		\path [fill=gray!30]  (12.8,-15.3) rectangle (16,-15.85);
+		
+		\path [fill=black!80] (10.5,-16.1) rectangle (13.2,-16.65);
+		\path [fill=gray!30]  (13.2,-16.1) rectangle (16,-16.65);
+
+		\path [fill=black!80] (10.5,-16.95) rectangle (13.8,-17.5);
+		\path [fill=gray!30]  (13.8,-16.9) rectangle (16,-17.45);
+		
+		\path [fill=black!80] (10.5,-17.8) rectangle (13.2,-18.35);
+		\path [fill=gray!30]  (13.2,-17.8) rectangle (16,-18.35);
+
+		\path [fill=black!80] (10.5,-18.65) rectangle (11.5,-19.2);
+		\path [fill=gray!30]  (11.5,-18.65) rectangle (16,-19.2);
+
+		\path [fill=black!80] (10.5,-19.5) rectangle (14.6,-20.05);
+		\path [fill=gray!30]  (14.6,-19.5) rectangle (16,-20.05);
+
+		\path [fill=black!80] (10.5,-20.35) rectangle (13.5,-20.9);
+		\path [fill=gray!30]  (13.5,-20.35) rectangle (16,-20.9);
+
+		\path [fill=black!80] (10.5,-21.2) rectangle (11.8,-21.75);
+		\path [fill=gray!30]  (11.8,-21.2) rectangle (16,-21.75);
+
+		\path [fill=black!80] (10.5,-22.05) rectangle (13.1,-22.6);
+		\path [fill=gray!30]  (13.1,-22.05) rectangle (16,-22.6);
+
+		\path [fill=black!80] (10.5,-22.95) rectangle (13.8,-23.5);
+		\path [fill=gray!30]  (13.8,-22.95) rectangle (16,-23.5);
+
+
+	% thin dotted line
+	\draw [dotted,fill=black!80] (-3,-19.5) -- (5,-19.5);
+	
+	% Hobby
+	\path [rotate=90,fill=red] (-20,3.5) rectangle (-23.5,3.6);
+	\node [xshift=-9.52cm,yshift=-10cm,rotate=90]at (current page.center)[text width=5cm, font=\myfont{20}{32},text=black!80]{\textsc{\textbf{Hobby}}};
+	
+	\node[xshift=-4.5cm,yshift=-11.5cm] at (current page.center)[text width=10cm,text=black!80,align=left,font=\myfont{15}{15}]
+	{
+		\begin{itemize}
+			\item DIY Projects (i.e. RaspberryPi)
+			\item \href{http://pl.spoj.com/status/mdyzma/}{\textbf{SPOJ.PL}}
+			\item Developing \href{http://biokademia.pl}{\textbf{Bio::Kademia}} website
+		\end{itemize}
+	};
+
 
 	
-	% Skills
-	\node [xshift=4.5cm]at (current page.west)[text=black!80,font=\myfont{25}{15},draw=red]{\textbf{Programming Skills}};
+
 	
     % Footer black stripe
-    \draw [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
+    \path [fill=black!80](current page.south west) rectangle (\paperwidth,-24);
     \end{tikzpicture}
+    
+    \vspace{1cm}
+
+%\begin{tabularx}{0.95\paperwidth}{>{\raggedleft\scshape}p{.1cm}X}
+%	& \textbf{09.2014 --  present}\\
+% 	& \textbf{Freelancer}\\
+%	& \textit{software developer (python, C++, web-developer)}\\[0.3cm]
+%	& \textbf{International Institute of Molecular and Cell Biology}\\
+%	& \textit{biologist, programmer}\\[0.3cm]    
+%	& \textbf{11.2009 --  11.2013}\\
+%	& \textbf{Institute of Fundamental Technological Research,\\
+%	& \textbf{Polish Academy of Sciences, Warsaw}\\
+%	& \textbf{Department of Mechanics and Physics of Fluids}\\
+%	& \textbf{Laboratory of Modeling in Biology and Medicine}\\
+%	& \textit{PhD student}\\[0.3cm]
+%	& \textbf{03.2006 --  03.2009}\\
+%	& \textbf{Universit\'{e} Libre de Bruxelles}\\
+%	& \textbf{H\^{o}pital Andr\'{e} Vesal\'{e}, Laboratoire de Sommeil}\\
+%	& \textit{Early Stage Researcher}\\[0.3cm]
+%	& \textbf{06.2004 --  02.2006}\\
+%	& \textbf{Noffer Institute of Occupational Medicine in Lodz}\\
+%	& \textbf{Department of Toxicology and Carcinogenesis}\\
+%	& \textit{Technician}\\
+%\end{tabularx}
+
+%\begin{flushleft}
+%    \begin{tabularx}{0.95\paperwidth}{>{\raggedleft\scshape}p{3cm}X}
+%\textbf{{2014 --  present}} & \textbf{Freelancer}\\
+%        & \textit{software developer (python, C++, web-developer)}\\[0.3cm]
+%        & \textit{Department of Mechanics and Physics of Fluids}\\
+%        & \textit{Laboratory of Modeling in Biology and Medicine}\\
+%        & PhD studies\\[0.3cm]
+%        & \textbf{1999 --  2004}\\
+%        & \textbf{University of Lodz}\\
+%        & \textbf{Department of Biology and Natural Sciences}\\
+%        & MSc in genetics\\[0.3cm]
+%        & \textbf{1998 --  2003}\\
+%        & \textbf{University of Lodz}\\
+%        & \textbf{Department of Biology and Natural Sciences}\\
+%        & MSc in neurophysiology\\
+%    \end{tabularx}
+%\end{flushleft}
+
+
+\begin{tikzpicture}
+
+	% thin dotted line
+%\draw [dotted,fill=black!80]  at (current page.west,4) -- (.9\paperwidth,4);
+
+	
+	
+	%Skills bars
+
+%		
+%		\path [fill=black!80] (2,3) rectangle (5.7,3.4);
+%		\path [fill=gray!30]  (5.7,3) rectangle (6,3.4);
+%		
+%		\path [fill=black!80] (2,2) rectangle (4,2.4);
+%		\path [fill=gray!40]  (4,2) rectangle (6,2.4);
+%		
+%		\path [fill=black!80] (2,1) rectangle (5,1.4);
+%		\path [fill=gray!30]  (5,1) rectangle (6,1.4);
+		
+
+\end{tikzpicture}
     
     \newpage
     \thispagestyle{empty}
